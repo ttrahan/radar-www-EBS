@@ -13,17 +13,28 @@
   </head>
 
   <body ng-controller="mainCtrl">
+    <div class="box">
+      <div class="panel panel-body">
+        <center><h3>Welcome!</h3></center>
+        <div class="alert alert-success text-center">
+          Version: {{apiVersion}}
+          <div class="separator"></div>
+          Message: {{apiMessage}}
+          <div class="separator"></div>
+          Time: {{apiAccessTime ? apiAccessTime: 'No Time Reported!'}}
+          <div class="separator"></div>
+        </div>
+        <div ng-if="message.type=='error'" class="alert alert-danger text-center">{{message.text}}</div>
+      </div>
+    </div>
     <div class="box ng-hide" ng-show="state=='submit'">
       <div class="panel panel-body">
         <div class="separator"></div>
-         <center><h1>Github Issue Radar<span ng-if="env.environment=='dev'">-- dev mode</span></h1></center>
+         <center><h3>Github Issue Radar<span ng-if="env.environment=='dev'">-- dev mode</span></h3></center>
         <div class="separator"></div>
         <div>
           <div>
-            <div ng-if="message.type=='error'" class="alert alert-danger text-center">{{message.text}}</div>
-            <div ng-if="apiVersion" class="alert alert-info text-center">Connected to api version {{apiVersion}}, on build #{{apiBuildnum}}, at {{apiAccessTime}}.<div class="separator"></div>
-            It says {{apiMessage}}</div>
-            <div ng-if="message.type=='info'" class="alert alert-success text-center">
+            <div ng-if="message.type=='info'" class="alert alert-info text-center">
             Get an access token (Github -> Settings -> Personal Access Tokens) and put it below.<div class="separator"></div>
             Choose a repository to view, the number of days back, and either open or closed issues.</div>
           </div>
@@ -49,8 +60,8 @@
               <div ng-if="loading" class="padding-sm"><div class="three-quarters-loader">Loading...</div></div>
             </center>
             <div class="span7 text-center">
-              <button class="btn btn-primary btn-lg button-pad" id="openButton" ng-click="getIssues('Open')">Open</button>
-              <button class="btn btn-primary btn-lg button-pad" id="closeButton" ng-click="getIssues('Close')">Closed</button>
+              <button class="btn btn-primary btn-md button-pad" id="openButton" ng-click="getIssues('Open')">Open</button>
+              <button class="btn btn-primary btn-md button-pad" id="closeButton" ng-click="getIssues('Close')">Closed</button>
             </div>
           </form>
         </div>

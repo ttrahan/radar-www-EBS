@@ -14,10 +14,11 @@ app.controller('mainCtrl', function ($scope, $log, env_factory, factory) {
   $scope.loading = false;
   $scope.log = $log;
   $scope.env = {};
-  $scope.apiMessage = 'nothing';
+  $scope.apiMessage = '';
   $scope.apiVersion = '';
   $scope.apiBuildnum = '';
-  $scope.apiAccessTime = 'Invalid Date';
+  $scope.apiAccessTime = null;
+  $scope.fullAPIResponse = false;
 
   env_factory.get()
     .success(function (data) {

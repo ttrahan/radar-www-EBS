@@ -14,15 +14,15 @@
     {
       "name": "NODE_ENV",
       "value": "dev"
-    }
+    },
     {
       "name": "WWW_PORT",
       "value": "3001"
-    }
+    },
     {
       "name": "CONSOLE_LOGLEVEL",
       "value": "debug"
-    }
+    },
     {
       "name": "API_URL",
       "value": "http://default-environment-in376psmgq.elasticbeanstalk.com/"

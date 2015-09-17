@@ -10,11 +10,22 @@
     }
   ],
   "Logging": "/var/log/radar-www",
-  "environment": [{
-    "NODE_ENV": "dev",
-    "WWW_PORT": "3001",
-    "CONSOLE_LOGLEVEL": "debug",
-    "FILE_LOG": "false",
-    "API_URL": "http://default-environment-in376psmgq.elasticbeanstalk.com/"
-  }]
+  "environment": [
+    {
+      "name": "NODE_ENV",
+      "value": "dev"
+    }
+    {
+      "name": "WWW_PORT",
+      "value": "3001"
+    }
+    {
+      "name": "CONSOLE_LOGLEVEL",
+      "value": "debug"
+    }
+    {
+      "name": "API_URL",
+      "value": "http://default-environment-in376psmgq.elasticbeanstalk.com/"
+    }
+  ]
 }
